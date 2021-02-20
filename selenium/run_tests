@@ -1,0 +1,4 @@
+#!/bin/bash
+# Compile and run Selenium unit tests on this Jekyll test site.
+javac -cp "/home/dpalencia/selenium-java/*" htmlUnitTest.java
+java -classpath /home/dpalencia/selenium-java/*:/home/dpalencia/testsite/selenium/ htmlUnitTest
