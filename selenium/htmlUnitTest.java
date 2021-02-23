@@ -27,9 +27,12 @@ public class htmlUnitTest {
 		Assert.assertFalse(pageSource.contains("requested page could not be found")); 
 
 		// Create a test that is specific to YOUR Jekyll site here -->
-		driver.findElement(By.linkText("dpalencia")).click();
-		System.out.println("New page title is: " + driver.getTitle());
-		     
+
+		// This test will find the "dpalencia" github link
+		// and ensure that the outbound link goes to the right address
+		String githubLink = driver.findElement(By.linkText("dpalencia")).getAttribute("href");
+		System.out.println("The github link goes to: " + githubLink);
+		Assert.assertTrue(githubLink.matches("^https//github.com/dpalencia/?$"));     
 		// <-- End of your test code
 
 		driver.quit();			
